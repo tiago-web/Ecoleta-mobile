@@ -58,25 +58,26 @@ const Points = () => {
 	}, []);
 
 	useEffect(() => {
-		async function loadPoisition() {
-			const { status } = await Location.requestPermissionsAsync();
+		setInitialPosition([43.7565315, -79.2620511]);
+		// async function loadPoisition() {
+		// 	const { status } = await Location.requestPermissionsAsync();
 
-			if (status !== "granted") {
-				Alert.alert(
-					"Oops...",
-					"Precisamos de sua permisão para obter a localização"
-				);
-				return;
-			}
+		// 	if (status !== "granted") {
+		// 		Alert.alert(
+		// 			"Oops...",
+		// 			"Precisamos de sua permisão para obter a localização"
+		// 		);
+		// 		return;
+		// 	}
 
-			const location = await Location.getCurrentPositionAsync();
+		// 	const location = await Location.getCurrentPositionAsync();
 
-			const { latitude, longitude } = location.coords;
+		// 	const { latitude, longitude } = location.coords;
 
-			setInitialPosition([latitude, longitude]);
-		}
+		// 	setInitialPosition([latitude, longitude]);
+		// }
 
-		loadPoisition();
+		// loadPoisition();
 	}, []);
 
 	useEffect(() => {
