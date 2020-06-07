@@ -26,6 +26,7 @@ interface Point {
 	id: number;
 	name: string;
 	image: string;
+	image_url: string;
 	latitude: number;
 	longitude: number;
 }
@@ -57,25 +58,26 @@ const Points = () => {
 	}, []);
 
 	useEffect(() => {
-		async function loadPoisition() {
-			const { status } = await Location.requestPermissionsAsync();
+		setInitialPosition([43.7565315, -79.2620511]);
+		// async function loadPoisition() {
+		// 	const { status } = await Location.requestPermissionsAsync();
 
-			if (status !== "granted") {
-				Alert.alert(
-					"Oops...",
-					"Precisamos de sua permisão para obter a localização"
-				);
-				return;
-			}
+		// 	if (status !== "granted") {
+		// 		Alert.alert(
+		// 			"Oops...",
+		// 			"Precisamos de sua permisão para obter a localização"
+		// 		);
+		// 		return;
+		// 	}
 
-			const location = await Location.getCurrentPositionAsync();
+		// 	const location = await Location.getCurrentPositionAsync();
 
-			const { latitude, longitude } = location.coords;
+		// 	const { latitude, longitude } = location.coords;
 
-			setInitialPosition([latitude, longitude]);
-		}
+		// 	setInitialPosition([latitude, longitude]);
+		// }
 
-		loadPoisition();
+		// loadPoisition();
 	}, []);
 
 	useEffect(() => {
@@ -149,7 +151,7 @@ const Points = () => {
 									<View style={styles.mapMarkerContainer}>
 										<Image
 											style={styles.mapMarkerImage}
-											source={{ uri: point.image }}
+											source={{ uri: point.image_url }}
 										/>
 										<Text style={styles.mapMarkerTitle}>{point.name}</Text>
 									</View>
