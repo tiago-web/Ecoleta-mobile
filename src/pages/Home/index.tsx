@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Feather as Icon } from "@expo/vector-icons";
 import {
 	View,
@@ -10,13 +10,52 @@ import {
 	KeyboardAvoidingView,
 	Platform,
 } from "react-native";
+import axios from "axios";
 import { RectButton } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
+
+interface IBGEUFResponse {
+	sigla: string;
+}
+
+interface IBGECityResponse {
+	nome: string;
+}
 
 const Home = () => {
 	const navigation = useNavigation();
 	const [uf, setUf] = useState("");
 	const [city, setCity] = useState("");
+
+	const [selectedUf, setSelectedUf] = useState("");
+	const [ufs, setUfs] = useState<string[]>([]);
+	const [cities, setCities] = useState<string[]>([]);
+
+	useEffect(() => {
+		axios
+			.get<IBGEUFResponse[]>(
+				"https://servicodados.ibge.gov.br/api/v1/localidades/estados"
+			)
+			.then(response => {
+				const ufInitials = response.data.map(uf => uf.sigla);
+				setUfs(ufInitials);
+			});
+	}, []);
+
+	useEffect(() => {
+		if (selectedUf === "0") {
+			return;
+		}
+
+		axios
+			.get<IBGECityResponse[]>(
+				`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`
+			)
+			.then(response => {
+				const cityNames = response.data.map(city => city.nome);
+				setCities(cityNames);
+			});
+	}, [selectedUf]);
 
 	function handleNavigateToPoints() {
 		navigation.navigate("Points", {
