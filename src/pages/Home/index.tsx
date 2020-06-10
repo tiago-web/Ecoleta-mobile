@@ -14,6 +14,8 @@ import axios from "axios";
 import { RectButton } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
+import Dropdown from "../../components/Dropdown";
+
 interface IBGEUFResponse {
 	sigla: string;
 }
@@ -43,7 +45,7 @@ const Home = () => {
 	}, []);
 
 	useEffect(() => {
-		if (selectedUf === "0") {
+		if (selectedUf === null) {
 			return;
 		}
 
@@ -88,6 +90,7 @@ const Home = () => {
 				</View>
 
 				<View style={styles.footer}>
+					{/* <Dropdown options={ufs} onSelected={setSelectedUf} /> */}
 					<TextInput
 						style={styles.input}
 						placeholder="Digite a UF"
