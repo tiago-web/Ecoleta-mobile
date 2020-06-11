@@ -3,7 +3,7 @@
    <img src=".github/ecoleta.png"/>
 </p>
 
-# Ecoleta ♻
+# Ecoleta-mobile ♻
 
 > Find the Nearest Drop-Off Locations
 
@@ -13,15 +13,15 @@
    </a>
    
    <a href="#" style="text-decoration: none">
-    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/tiago-web/Ecoleta?color=34CB79" />
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/tiago-web/Ecoleta-mobile?color=34CB79" />
    </a>
    
    <a href="https://github.com/tiago-web/Ecoleta-mobile/stargazers" style="text-decoration: none">
-    <img alt="Stars" src="https://img.shields.io/github/stars/tiago-web/Ecoleta?color=34CB79&style=flat" />
+    <img alt="Stars" src="https://img.shields.io/github/stars/tiago-web/Ecoleta-mobile?color=34CB79&style=flat" />
    </a>
    
    <a href="https://github.com/tiago-web/Ecoleta-mobile/issues" style="text-decoration: none">
-    <img alt="Issues" src="https://img.shields.io/github/issues/tiago-web/Ecoleta?color=34CB79&style=flat" />
+    <img alt="Issues" src="https://img.shields.io/github/issues/tiago-web/Ecoleta-mobile?color=34CB79&style=flat" />
    </a>
 </p>
 
@@ -39,13 +39,12 @@
 * [Features](#link-features)
 * [Installation](#construction_worker-installation)
 * [Getting Started](#checkered_flag-getting-started)
-* [Dependencies](#lock-dependencies)
 * [FAQ](#postbox-faq)
 * [Found a bug? Missing a specific feature?](#hammer-issues)
 * [License](#book-license)
 
 
-# :link:Features
+# :link: Features
 
 * 🔍 Search for the nearest drop-off location.
 * 💻 Connect recycling locations to citizens.
@@ -99,6 +98,6 @@ Feel free to **file a new issue** with a respective title and description on the
 # :book: License
 
 Released in 2020.
-This project is under the [MIT license](https://github.com/tiago-web/Ecoleta-mobile/master/LICENSE).
+This project is under the [MIT license](https://github.com/tiago-web/Ecoleta-mobile/blob/master/LICENSE).
 
 Made with ❤️ by [Tiago Soriano](https://github.com/tiago-web) 🚀
